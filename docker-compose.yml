@@ -10,7 +10,7 @@ services:
     image: mysql:5.7.28
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD: secret
-      - MYSQL_DATABASE: development
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=development
     volumes:
       - ./data/mysql:/var/lib/mysql/data
