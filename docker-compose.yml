@@ -6,6 +6,8 @@ services:
     restart: always
     environment:
       - ACCEPT_EULA=Y
+    volumes: 
+      - ./data/myssql:/var/opt/mssql
   mysql:
     image: mysql:5.7.28
     restart: always
