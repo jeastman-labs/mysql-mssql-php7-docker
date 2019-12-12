@@ -1,0 +1,3 @@
+[submodule "proyecto-php"]
+	path = proyecto-php
+	url = git@github.com:jeastman-labs/proyecto-php.git

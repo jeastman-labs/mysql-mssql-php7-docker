@@ -16,3 +16,22 @@ services:
       - MYSQL_DATABASE=development
     volumes:
       - ./data/mysql:/var/lib/mysql/data
+  proyecto01:
+    image: proyecto-01
+    restart: always
+    build:
+      context: ./proyecto-01
+      dockerfile: Dockerfile
+    volumes:
+      - ./proyecto-01:/var/www/html
+    depends_on:
+      - mysql
+  proxy:
+    image: nginx:latest
+    restart: always
+    volumes:
+      - ./sites:/etc/nginx/conf.d
+    ports:
+      - 80:80
+    depends_on:
+      - proyecto01
